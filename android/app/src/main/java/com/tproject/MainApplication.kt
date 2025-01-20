@@ -1,4 +1,4 @@
-package com.tproject
+package com.b2c
 
 import android.app.Application
 import com.facebook.react.PackageList
