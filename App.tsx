@@ -3,6 +3,12 @@ import {View, Text, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
+import CustomIcon from '@/src/Icon.tsx';
+import FontAwesome, {
+  SolidIcons,
+  RegularIcons,
+  BrandIcons,
+} from 'react-native-fontawesome';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -26,6 +32,10 @@ const SplashScreen = ({navigation}) => {
 const HomeScreen = ({navigation}) => (
   <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
     <Text>Home Screen</Text>
+    <CustomIcon name={'\uf007'} />
+    <CustomIcon name={'fa-regular fa-house'} />
+    <CustomIcon name={'0xf007'} />
+    <FontAwesome icon={SolidIcons.smile} />
     <Button
       title="Go to Nested Screen"
       onPress={() => navigation.navigate('NestedTab')}
