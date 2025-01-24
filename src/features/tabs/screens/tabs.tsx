@@ -3,16 +3,22 @@ import {View, StyleSheet, Text, Button} from 'react-native';
 import * as Progress from 'react-native-progress';
 import {useAtom} from "jotai";
 import {countAtom, incrementCountAtom} from "@/src/features/tabs/controllers/tabs.ts";
+import {useNavigation} from "@react-navigation/native";
 
 const Tabs = () => {
   const [count] = useAtom(countAtom);
   const [, incrementCount] = useAtom(incrementCountAtom);
+  const navigation = useNavigation();
+
+  const goToSettings = () => {
+    navigation.navigate('Settings'); // Переключение на вкладку "Settings"
+  };
 
   return (
     <View style={[styles.container]}>
       <View style={styles.content}>
         <Text style={{ fontSize: 20, marginBottom: 10 }}>Count: {count}</Text>
-        <Button title="Increment" onPress={incrementCount} />
+        <Button title="Increment" onPress={goToSettings} />
         <Progress.Circle
           size={40}
           indeterminate={true}
