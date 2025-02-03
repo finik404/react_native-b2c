@@ -6,22 +6,22 @@ import {useNavigation} from '@react-navigation/native';
 const SplashScreen = () => {
   const navigation = useNavigation();
 
-  // React.useEffect(() => {
-  //   const showSplash = async () => {
-  //     const startTime = new Date();
-  //     const elapsedTime = new Date().getTime() - startTime.getTime();
-  //
-  //     if (elapsedTime < 2000) {
-  //       setTimeout(() => {
-  //         navigation.replace('tabs');
-  //       }, 2000 - elapsedTime);
-  //     } else {
-  //       navigation.replace('tabs');
-  //     }
-  //   };
-  //
-  //   showSplash();
-  // }, [navigation]);
+  React.useEffect(() => {
+    const showSplash = async () => {
+      const startTime = new Date();
+      const elapsedTime = new Date().getTime() - startTime.getTime();
+
+      if (elapsedTime < 2000) {
+        setTimeout(() => {
+          navigation.replace('home');
+        }, 2000 - elapsedTime);
+      } else {
+        navigation.replace('home');
+      }
+    };
+
+    showSplash();
+  }, [navigation]);
 
   return (
     <View style={[styles.container]}>
