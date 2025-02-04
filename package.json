@@ -24,6 +24,7 @@
     "react-native-router-flux": "^4.3.1",
     "react-native-safe-area-context": "^5.1.0",
     "react-native-screens": "^4.5.0",
+    "react-native-skeleton-content": "^1.0.28",
     "react-native-svg": "^15.11.1"
   },
   "devDependencies": {

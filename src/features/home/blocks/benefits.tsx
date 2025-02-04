@@ -1,39 +1,36 @@
 import useApi from '@/src/util/http/api.ts';
 import React from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
-import {BenefitCard} from '@/src/features/home/blocks/widgets/Card.tsx';
-import {UIList} from '@/src/common/widgets/List.tsx';
+import {Text, View} from 'react-native';
+import SkeletonContent from 'react-native-skeleton-content';
 
 export const HomeBenefits = () => {
   const api = useApi();
 
   React.useEffect(() => {
-    console.log('api.data');
     const fetchData = async () => {
       await api.fetchData('/include/mainpage/advantages/', 'GET');
-      console.log('api.data?.data');
-      console.log(api.data?.data[0]);
     };
 
     fetchData();
   }, []);
 
   return (
-    <View style={[ss.container]}>
-      <View style={ss.content}>
-        <UIList
-          items={api.data?.data}
-          child={item => <BenefitCard data={item} />}
-        />
-      </View>
-    </View>
+    <SkeletonContent
+      containerStyle={{flex: 1, width: 300}}
+      isLoading={false}
+      layout={[
+        {key: 'someId', width: 220, height: 20, marginBottom: 6},
+        {key: 'someOtherId', width: 180, height: 20, marginBottom: 6},
+      ]}>
+      <Text style={styles.normalText}>Your content</Text>
+      <Text style={styles.bigText}>Other content</Text>
+    </SkeletonContent>
   );
 };
 
-const ss = StyleSheet.create({
-  container: {
-  },
-  content: {
-    height: 128,
-  },
-});
+
+// <UIList
+//   items={api.data?.data}
+//   height={128}
+//   child={item => <BenefitCard data={item} />}
+// />
