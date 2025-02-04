@@ -1,32 +1,33 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, useWindowDimensions, View} from 'react-native';
+import {UIImage} from '@/src/common/widgets/Image.tsx';
+import RenderHTML from 'react-native-render-html';
+import {TColors, opacity} from '@/src/util/constants/colors/_exports';
 
 export const BenefitCard = data => {
-  console.log('data');
-  console.log(data.data?.attributes);
-
   return (
-    <View style={[ss.container]}>
-      <View style={ss.content}>
-        <Text style={ss.content}>{data?.data?.attributes?.text}</Text>
-      </View>
+    <View style={ss.content}>
+      <UIImage style={ss.img} image={data.data?.attributes?.image} width={26} />
+      <RenderHTML
+        baseStyle={ss.text}
+        source={{html: data?.data?.attributes?.text}}
+      />
     </View>
   );
 };
 
 const ss = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
-  },
   img: {
-    width: 150,
-    height: 150,
-    marginBottom: 35,
+    marginBottom: 16,
+  },
+  text: {
+    fontSize: 16,
   },
   content: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    width: 184,
+    borderRadius: 10,
+    borderColor: opacity(TColors.primary, 20),
+    borderWidth: 1,
+    paddingHorizontal: 20,
+    paddingVertical: 16,
   },
 });

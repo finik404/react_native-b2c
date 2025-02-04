@@ -1,7 +1,8 @@
 import useApi from '@/src/util/http/api.ts';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import {BenefitCard} from '@/src/features/home/blocks/widgets/Card.tsx';
+import {UIList} from '@/src/common/widgets/List.tsx';
 
 export const HomeBenefits = () => {
   const api = useApi();
@@ -20,7 +21,10 @@ export const HomeBenefits = () => {
   return (
     <View style={[ss.container]}>
       <View style={ss.content}>
-        <BenefitCard data={api.data?.data[0]} />
+        <UIList
+          items={api.data?.data}
+          child={item => <BenefitCard data={item} />}
+        />
       </View>
     </View>
   );
@@ -28,17 +32,8 @@ export const HomeBenefits = () => {
 
 const ss = StyleSheet.create({
   container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
-  },
-  img: {
-    width: 150,
-    height: 150,
-    marginBottom: 35,
   },
   content: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    height: 128,
   },
 });

@@ -134,6 +134,10 @@ const Stack = createStackNavigator();
 //   </Tab.Navigator>
 // );
 
+if (__DEV__) {
+    require("./ReactotronConfig");
+}
+
 // Root Stack Navigator
 export default function App() {
   return (
