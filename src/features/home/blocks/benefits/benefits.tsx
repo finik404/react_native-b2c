@@ -1,8 +1,9 @@
-import useApi from '@/src/util/http/api';
 import React from 'react';
+import useApi from '@/src/util/http/api';
 import {BenefitCard} from '@/src/features/home/blocks/benefits/widgets/Card';
 import {HomeItems} from '@/src/features/home/widgets/Items';
 
+// # --------------- HomeBenefits --------------- #
 export const HomeBenefits = () => {
   const api = useApi();
 
@@ -18,7 +19,7 @@ export const HomeBenefits = () => {
     <HomeItems<TBenefit>
       items={api.data?.data}
       height={128}
-      child={(item) => <BenefitCard data={item} />}
+      child={item => <BenefitCard data={item} />}
     />
   );
 };

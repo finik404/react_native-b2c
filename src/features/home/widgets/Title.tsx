@@ -14,7 +14,7 @@ export const HomeTitle: React.FC<HomeTitleProps> = ({
 }) => {
   return (
     <View style={[{marginBottom}, ss.row]}>
-      <UIText style={ss.label} text={label} />
+      <UIText style={ss.label} label={label} />
     </View>
   );
 };

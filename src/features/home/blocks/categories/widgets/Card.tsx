@@ -2,17 +2,19 @@ import React from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import {UIImage} from '@/src/common/widgets/Image';
 import {TColors} from '@/src/util/constants/colors/_exports';
+import {UIText} from '@/src/common/widgets/Text';
 
 // # --------------- Props --------------- #
 type Props = {
-  data: TBrand;
+  data: TCategory;
 };
 
-// # --------------- BrandCard --------------- #
-export const BrandCard: React.FC<Props> = ({data}) => {
+// # --------------- CategoryCard --------------- #
+export const CategoryCard: React.FC<Props> = ({data}) => {
   return (
     <TouchableOpacity style={ss.card} onPress={() => console.log('press')}>
-      <UIImage style={ss.img} image={data.attributes.main_page.image} />
+      <UIImage style={ss.img} image={data.attributes.images.preview} />
+      <UIText label={data.attributes.name} />
     </TouchableOpacity>
   );
 };
@@ -21,10 +23,7 @@ export const BrandCard: React.FC<Props> = ({data}) => {
 const ss = StyleSheet.create({
   img: {
     objectFit: 'contain',
-    width: 96,
-  },
-  text: {
-    fontSize: 16,
+    marginBottom: 12,
   },
   card: {
     width: 184,

@@ -9,7 +9,7 @@ type Props = {
   data: TBenefit;
 };
 
-// # --------------- Component --------------- #
+// # --------------- BenefitCard --------------- #
 export const BenefitCard: React.FC<Props> = ({data}) => {
   return (
     <View style={ss.content}>

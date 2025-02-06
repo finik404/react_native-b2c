@@ -7,3 +7,8 @@ interface TItem<T> {
   attributes: T;
   links: TLinks;
 }
+
+interface TImages {
+  preview: string;
+  detail: string | null;
+}
