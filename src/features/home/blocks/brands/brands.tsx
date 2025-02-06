@@ -1,4 +1,4 @@
-import useApi from '@/src/util/http/api.ts';
+import useApi from '@/src/util/http/api';
 import React from 'react';
 import {BrandCard} from '@/src/features/home/blocks/brands/widgets/Card';
 import {HomeItems} from '@/src/features/home/widgets/Items';

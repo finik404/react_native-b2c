@@ -1,4 +1,4 @@
-import useApi from '@/src/util/http/api.ts';
+import useApi from '@/src/util/http/api';
 import React from 'react';
 import {BenefitCard} from '@/src/features/home/blocks/benefits/widgets/Card';
 import {HomeItems} from "@/src/features/home/widgets/Items";

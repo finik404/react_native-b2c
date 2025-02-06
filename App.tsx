@@ -3,14 +3,10 @@ import {View, Text, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
-import CustomIcon from '@/src/Icon.tsx';
-import FontAwesome, {
-  SolidIcons,
-  RegularIcons,
-  BrandIcons,
-} from 'react-native-fontawesome';
-import Home, {HomeScreen} from "@/src/features/home/screens/home.tsx";
-import SplashScreen from "@/src/features/splash/screens/splash.tsx";
+import CustomIcon from '@/src/common/widgets/Icon';
+import Home, {HomeScreen} from "@/src/features/home/screens/home";
+import SplashScreen from "@/src/features/splash/screens/splash";
+// import { StatusBar } from 'expo-status-bar';
 
 // const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -133,10 +129,6 @@ const Stack = createStackNavigator();
 //     />
 //   </Tab.Navigator>
 // );
-
-if (__DEV__) {
-    require("./ReactotronConfig");
-}
 
 // Root Stack Navigator
 export default function App() {

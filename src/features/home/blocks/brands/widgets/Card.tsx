@@ -6,7 +6,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
-import {UIImage} from '@/src/common/widgets/Image.tsx';
+import {UIImage} from '@/src/common/widgets/Image';
 import {TColors, opacity} from '@/src/util/constants/colors/_exports';
 
 export const BrandCard = data => {

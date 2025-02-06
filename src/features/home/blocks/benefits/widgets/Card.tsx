@@ -1,5 +1,5 @@
 import {Image, StyleSheet, Text, useWindowDimensions, View} from 'react-native';
-import {UIImage} from '@/src/common/widgets/Image.tsx';
+import {UIImage} from '@/src/common/widgets/Image';
 import RenderHTML from 'react-native-render-html';
 import {TColors, opacity} from '@/src/util/constants/colors/_exports';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {HomeBenefits} from '@/src/features/home/blocks/benefits/benefits.tsx';
+import {HomeBenefits} from '@/src/features/home/blocks/benefits/benefits';
 import {HomeBrands} from "@/src/features/home/blocks/brands/brands";
 
 export const HomeScreen = () => {
