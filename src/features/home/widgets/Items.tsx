@@ -1,33 +1,29 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 import {HomeTitle} from '@/src/features/home/widgets/Title';
 import {UIList} from '@/src/common/widgets/List';
 
-interface HomeItemsProps {
+interface HomeItemsProps<T> {
   style?: object;
   marginBottom?: number;
   title?: string;
   height?: number;
-  items: any[];
-  child: React.ComponentType<{item: any}>;
+  items: T[];
+  child: (item: T) => React.ReactNode;
 }
 
-export const HomeItems: React.FC<HomeItemsProps> = ({
+export const HomeItems = <T,>({
   marginBottom = 36,
   title,
   height,
   items,
   child,
-}) => {
+}: HomeItemsProps<T>) => {
   return (
-    <View style={[{marginBottom}, ss.container]}>
+    <View style={[{marginBottom}]}>
       {title && <HomeTitle label={title} />}
 
-      <UIList height={height} items={items} child={child} padding={24} />
+      <UIList<T> height={height} items={items} child={child} padding={24} />
     </View>
   );
 };
-
-const ss = StyleSheet.create({
-  container: {},
-});

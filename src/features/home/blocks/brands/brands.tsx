@@ -15,7 +15,7 @@ export const HomeBrands = () => {
   }, []);
 
   return (
-    <HomeItems
+    <HomeItems<TBrand>
       title={'Популярные бренды'}
       items={api.data?.data}
       height={104}

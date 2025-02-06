@@ -1,17 +1,17 @@
-import React from 'react';
+import React, {ReactElement} from 'react';
 import {FlatList, View} from 'react-native';
 
-interface UIListProps {
+interface Props<T> {
   style?: object;
-  items: any[];
-  child: React.ComponentType<{item: any}>;
+  items: T[];
+  child: (item: T) => React.ReactNode;
   spaceBetween?: number;
   padding?: number;
   height?: number;
   horizontal?: boolean;
 }
 
-export const UIList: React.FC<UIListProps> = ({
+export const UIList = <T,>({
   items,
   child,
   horizontal = true,
@@ -19,7 +19,7 @@ export const UIList: React.FC<UIListProps> = ({
   padding = 0,
   height,
   style,
-}) => {
+}: Props<T>) => {
   return (
     <View style={{height}}>
       <FlatList
@@ -29,7 +29,7 @@ export const UIList: React.FC<UIListProps> = ({
         contentContainerStyle={[{paddingHorizontal: padding}, style]}
         keyExtractor={(item, index) => index.toString()}
         ItemSeparatorComponent={() => <View style={{width: spaceBetween}} />}
-        renderItem={({item}) => React.createElement(child, item)}
+        renderItem={({item}) => child(item) as ReactElement}
       />
     </View>
   );
