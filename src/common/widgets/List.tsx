@@ -6,7 +6,7 @@ interface UIListProps {
   items: any[];
   child: React.ComponentType<{item: any}>;
   spaceBetween?: number;
-  padHor?: number;
+  padding?: number;
   height?: number;
   horizontal?: boolean;
 }
@@ -16,7 +16,7 @@ export const UIList: React.FC<UIListProps> = ({
   child,
   horizontal = true,
   spaceBetween = 12,
-  padHor = 24,
+  padding = 0,
   height,
   style,
 }) => {
@@ -26,7 +26,7 @@ export const UIList: React.FC<UIListProps> = ({
         data={items}
         horizontal={horizontal}
         showsHorizontalScrollIndicator={false}
-        style={[{paddingHorizontal: padHor}, style]}
+        contentContainerStyle={[{paddingHorizontal: padding}, style]}
         keyExtractor={(item, index) => index.toString()}
         ItemSeparatorComponent={() => <View style={{width: spaceBetween}} />}
         renderItem={({item}) => React.createElement(child, item)}
