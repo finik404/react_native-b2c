@@ -20,6 +20,7 @@ export const HomeBrands = () => {
       title={'Популярные бренды'}
       items={api.data?.data}
       height={104}
+      loading={api.loading}
       child={item => <BrandCard data={item} />}
     />
   );

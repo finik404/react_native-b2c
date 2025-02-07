@@ -3,6 +3,7 @@ import {View, StyleSheet} from 'react-native';
 import {HomeBenefits} from '@/src/features/home/blocks/benefits/benefits';
 import {HomeBrands} from '@/src/features/home/blocks/brands/brands';
 import {HomeCategories} from '@/src/features/home/blocks/categories/categories';
+import {TColors} from "@/src/util/constants/colors/colors";
 
 export const HomeScreen = () => {
   return (
@@ -21,6 +22,7 @@ const ss = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
+    backgroundColor: TColors.white,
   },
   img: {
     width: 150,

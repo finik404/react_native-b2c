@@ -19,6 +19,7 @@ export const HomeBenefits = () => {
     <HomeItems<TBenefit>
       items={api.data?.data}
       height={128}
+      loading={api.loading}
       child={item => <BenefitCard data={item} />}
     />
   );

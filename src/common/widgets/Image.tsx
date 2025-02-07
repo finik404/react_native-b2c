@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image} from 'react-native';
-import {apiUrl} from '@/src/util/constants/privates.ts';
+import {apiUrl} from '@/src/util/constants/privates';
 
 interface UIImageProps {
   style?: object;

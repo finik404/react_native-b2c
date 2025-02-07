@@ -4,8 +4,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 import CustomIcon from '@/src/common/widgets/Icon';
-import Home, {HomeScreen} from "@/src/features/home/screens/home";
-import SplashScreen from "@/src/features/splash/screens/splash";
+import {HomeScreen} from '@/src/features/home/screens/home';
+import SplashScreen from '@/src/features/splash/screens/splash';
 // import { StatusBar } from 'expo-status-bar';
 
 // const Tab = createBottomTabNavigator();

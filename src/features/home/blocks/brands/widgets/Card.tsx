@@ -21,7 +21,7 @@ export const BrandCard: React.FC<Props> = ({data}) => {
 const ss = StyleSheet.create({
   img: {
     objectFit: 'contain',
-    width: 96,
+    width: 100,
   },
   text: {
     fontSize: 16,

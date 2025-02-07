@@ -20,6 +20,7 @@ export const HomeCategories = () => {
       title={'Популярные категории'}
       items={api.data?.data}
       height={192}
+      loading={api.loading}
       child={item => <CategoryCard data={item} />}
     />
   );

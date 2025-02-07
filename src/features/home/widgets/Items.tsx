@@ -2,6 +2,8 @@ import React from 'react';
 import {View} from 'react-native';
 import {HomeTitle} from '@/src/features/home/widgets/Title';
 import {UIList} from '@/src/common/widgets/List';
+import {UISkeleton} from '@/src/common/widgets/Skeleton';
+import {sWidth} from "@/src/util/variables";
 
 interface HomeItemsProps<T> {
   style?: object;
@@ -10,6 +12,9 @@ interface HomeItemsProps<T> {
   height?: number;
   items: T[];
   child: (item: T) => React.ReactNode;
+  skeleton?: React.ReactNode;
+  loading: boolean;
+  loadingLength?: number;
 }
 
 export const HomeItems = <T,>({
@@ -18,12 +23,26 @@ export const HomeItems = <T,>({
   height,
   items,
   child,
+  loading,
+  skeleton,
+  loadingLength = 5,
 }: HomeItemsProps<T>) => {
   return (
     <View style={[{marginBottom}]}>
       {title && <HomeTitle label={title} />}
 
-      <UIList<T> height={height} items={items} child={child} padding={24} />
+      {loading ? (
+        <UIList<T>
+          height={height}
+          items={Array(loadingLength)}
+          child={() =>
+            skeleton || <UISkeleton width={(sWidth - 12) * 0.5} style={{height: '100%'}} />
+          }
+          padding={24}
+        />
+      ) : (
+        <UIList<T> height={height} items={items} child={child} padding={24} />
+      )}
     </View>
   );
 };

@@ -1,9 +1,7 @@
-import React from "react";
-import {apiUrl} from "@/src/util/constants/privates.ts";
+import React from 'react';
+import {apiUrl} from '@/src/util/constants/privates';
 
-
-
-const useApi = ()   => {
+const useApi = () => {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
   const [data, setData] = React.useState(null);
