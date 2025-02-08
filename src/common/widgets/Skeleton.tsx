@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {sWidth} from '@/src/util/variables';
 
 // # --------------- Props --------------- #
 interface Props {
@@ -12,7 +11,7 @@ interface Props {
 
 // # --------------- UISkeleton --------------- #
 export const UISkeleton: React.FC<Props> = ({
-  width,
+  width = '100%',
   height = 18,
   radius = 10,
   style,
@@ -20,7 +19,7 @@ export const UISkeleton: React.FC<Props> = ({
   return (
     <View
       style={[
-        {width: width || sWidth, height, borderRadius: radius},
+        {width: width, height, borderRadius: radius},
         ss.skeleton,
         style,
       ]}

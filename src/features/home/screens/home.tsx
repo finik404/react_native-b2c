@@ -1,17 +1,21 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
-import {HomeBenefits} from '@/src/features/home/blocks/benefits/benefits';
-import {HomeBrands} from '@/src/features/home/blocks/brands/brands';
-import {HomeCategories} from '@/src/features/home/blocks/categories/categories';
-import {TColors} from "@/src/util/constants/colors/colors";
+import { View, StyleSheet, ScrollView } from 'react-native';
+import { HomeBenefits } from '@/src/features/home/blocks/benefits/benefits';
+import { HomeBrands } from '@/src/features/home/blocks/brands/brands';
+import { HomeCategories } from '@/src/features/home/blocks/categories/categories';
+import { TColors } from '@/src/util/constants/colors/colors';
+import { HomeBlog } from '@/src/features/home/blocks/blog/blog';
 
 export const HomeScreen = () => {
   return (
     <View style={ss.container}>
       <View style={ss.content}>
-        <HomeBenefits />
-        <HomeCategories />
-        <HomeBrands />
+        <ScrollView>
+          <HomeBenefits />
+          <HomeCategories />
+          <HomeBrands />
+          <HomeBlog />
+        </ScrollView>
       </View>
     </View>
   );

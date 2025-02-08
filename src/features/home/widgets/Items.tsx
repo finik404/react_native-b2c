@@ -32,7 +32,7 @@ export const HomeItems = <T,>({
     <View style={[{marginBottom}]}>
       {title && <HomeTitle label={title} />}
 
-      {loading ? (
+      {true ? (
         <UIList<T>
           height={height}
           items={Array(loadingLength)}
